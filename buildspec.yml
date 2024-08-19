@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Installing dependencies...
+      - npm install
+
+  pre_build:
+    commands:
+      - echo Running linting and type-checking...
+      - npm run lint
+      - npm run check-types
+
+  build:
+    commands:
+      - echo Starting the build process...
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build completed.
+      - echo Exporting the project as static files...
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: out
+
+cache:
+  paths:
+    - "node_modules/**/*"
+    - ".next/cache/**/*"
