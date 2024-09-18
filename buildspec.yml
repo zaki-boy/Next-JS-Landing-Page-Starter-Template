@@ -28,8 +28,3 @@ artifacts:
   files:
     - "**/*"
   base-directory: out
-
-cache:
-  paths:
-    - "node_modules/**/*"
-    - ".next/cache/**/*"
