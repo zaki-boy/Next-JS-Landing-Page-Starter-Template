@@ -28,10 +28,6 @@ phases:
 
 artifacts:
   files:
-    - "**/*"
+    - "out/**/*"
     - "coverage/**/*"
-  base-directory: out
-  secondary-artifacts:
-    coverage-report:
-      files:
-        - "coverage/**/*"
+  discard-paths: no
