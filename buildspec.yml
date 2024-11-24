@@ -16,15 +16,22 @@ phases:
 
   build:
     commands:
+      - echo Running tests and generating coverage report...
+      - npm test -- --coverage
       - echo Starting the build process...
       - npm run build
 
   post_build:
     commands:
-      - echo Build completed.
+      - echo Build and tests completed.
       - echo Exporting the project as static files...
 
 artifacts:
   files:
     - "**/*"
+    - "coverage/**/*"
   base-directory: out
+  secondary-artifacts:
+    coverage-report:
+      files:
+        - "coverage/**/*"
