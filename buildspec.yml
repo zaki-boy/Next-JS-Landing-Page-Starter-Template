@@ -30,4 +30,4 @@ artifacts:
   files:
     - "out/**/*"
     - "coverage/**/*"
-  discard-paths: no
+  discard-paths: yes
